@@ -18,6 +18,7 @@ Template.entrySocial.helpers
   icon: ->
     switch @.toString()
       when 'google' then 'google-plus'
+      when 'facebook' then 'facebook'
       when 'meteor-developer' then 'rocket'
       else @
 

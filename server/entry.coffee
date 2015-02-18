@@ -1,14 +1,15 @@
 Meteor.startup ->
-  Accounts.urls.resetPassword = (token) ->
-    Meteor.absoluteUrl('reset-password/' + token)
-
+  
   AccountsEntry =
-    settings: {}
+  settings: {}
 
-    config: (appConfig) ->
-      @settings = _.extend(@settings, appConfig)
+  config: (appConfig) ->
+    @settings = _.extend(@settings, appConfig)
 
   @AccountsEntry = AccountsEntry
+  
+  Accounts.urls.resetPassword = (token) ->
+    Meteor.absoluteUrl('reset-password/' + token)
 
   Meteor.methods
     entryValidateSignupCode: (signupCode) ->
